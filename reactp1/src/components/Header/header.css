@@ -1,16 +1,41 @@
-nav{
-  background: linear-gradient(to bottom right, white, lightblue);
-  /* height: 100vh; */
-  margin: 0;
+.header-container {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
+  align-items: center ;
+  padding: 20px 20px;
 }
 
-.video-container {
-  margin: 10px;
+
+
+.nav-links {
+  display: flex;
+  align-items: center;
 }
-video {
+
+.flex {
+  display: flex;
+}
+
+.nav-link {
+  padding: 0 15px; /* Adjust this value to increase or decrease the space between elements */
+  text-decoration: none;
+  color: gray; /* Default color */
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: orange;
+}
+
+.nav-link.active {
+  color: orange;
+}
+
+/* Optional: Add some basic styling for the video element */
+.video-container video {
   width: 150px; /* Adjust width as needed */
   height: auto;
+  margin-right: 20px; /* Space between the video and the nav links */
 }
+
+
