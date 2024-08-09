@@ -1,14 +1,8 @@
-<<<<<<< HEAD:reactp1/src/components/Header/header.css
 .header-container {
-=======
-nav{
-  /* height: 100vh; */
-  margin: 0;
->>>>>>> 3042f53e25dfbbb912fc96a4474bc355e6b17d7c:reactp1/src/components/header.css
   display: flex;
   justify-content: space-between;
-  align-items: center ;
-  padding: 20px 20px;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 
@@ -39,9 +33,12 @@ nav{
 
 /* Optional: Add some basic styling for the video element */
 .video-container video {
-  width: 150px; /* Adjust width as needed */
+  width: 200px; /* Adjust width as needed */
   height: auto;
   margin-right: 20px; /* Space between the video and the nav links */
 }
+
+
+
 
 
