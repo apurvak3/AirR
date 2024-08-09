@@ -1,4 +1,10 @@
+<<<<<<< HEAD:reactp1/src/components/Header/header.css
 .header-container {
+=======
+nav{
+  /* height: 100vh; */
+  margin: 0;
+>>>>>>> 3042f53e25dfbbb912fc96a4474bc355e6b17d7c:reactp1/src/components/header.css
   display: flex;
   justify-content: space-between;
   align-items: center ;
