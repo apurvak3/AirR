@@ -1,0 +1,17 @@
+body {
+  background: linear-gradient(to bottom right, white, lightblue);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.video-container {
+  margin: 10px;
+}
+video {
+  width: 150px; /* Adjust width as needed */
+  height: auto;
+}
+
+
