@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../navbar/Navbar";
 
 function Blog() {
   return (
-    <div>Blog</div>
-  )
+    <>
+      <Navbar />
+    </>
+  );
 }
 
-export default Blog
+export default Blog;
