@@ -1,8 +1,9 @@
 import React from "react";
 import Navbar from "../navbar/Navbar";
-import hero1 from "../../assets/imgs/aero.png"
-import hero2 from "../../assets/imgs/hero4.jpg"
-import hero3 from "../../assets/imgs/hero5.jpg"
+import hero1 from "../../assets/imgs/aero.png";
+import hero2 from "../../assets/imgs/hero4.jpg";
+import hero3 from "../../assets/imgs/hero5.jpg";
+import Footer from "../footer/Footer";
 
 function Home() {
   return (
@@ -38,13 +39,25 @@ function Home() {
           </div>
           <div className="carousel-inner h-75">
             <div className="carousel-item active">
-              <img src={hero1} class="d-block w-100 object-fit-cover slider-img" alt="heroImg" />
+              <img
+                src={hero1}
+                class="d-block w-100 object-fit-cover slider-img"
+                alt="heroImg"
+              />
             </div>
             <div className="carousel-item">
-              <img src={hero2} class="d-block w-100 object-fit-cover slider-img" alt="heroImg" />
+              <img
+                src={hero2}
+                class="d-block w-100 object-fit-cover slider-img"
+                alt="heroImg"
+              />
             </div>
             <div className="carousel-item">
-              <img src={hero3} class="d-block w-100 object-fit-cover slider-img" alt="heroImg" />
+              <img
+                src={hero3}
+                class="d-block w-100 object-fit-cover slider-img"
+                alt="heroImg"
+              />
             </div>
           </div>
           <button
@@ -67,6 +80,8 @@ function Home() {
           </button>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }

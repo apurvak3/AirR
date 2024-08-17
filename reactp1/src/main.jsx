@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Blog from "./components/blog/Blog.jsx";
 import Support from "./components/support/Support.jsx";
