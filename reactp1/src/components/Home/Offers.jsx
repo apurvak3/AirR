@@ -1,5 +1,4 @@
 import React from 'react';
-import Home from './components/homePage.jsx';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const OfferCard = ({ title, description, validTill, imageUrl }) => (
@@ -25,11 +24,11 @@ const FlightDeal = ({ destination, date, airline, price }) => (
   </div>
 );
 
-const HomePage = () => {
+const Offers = () => {
   const offers = [
-    { title: "Last Minute Booking", description: "Flat 25% OFF with Last Minute Booking", validTill: "25th Aug 2024", imageUrl: "/api/placeholder/300/200" },
-    { title: "Akasa Air", description: "Book Akasa Air One-Way Domestic Flights at a Starting Fare of INR 1,515*", validTill: "18th Aug 2024", imageUrl: "/api/placeholder/300/200" },
-    { title: "ITA Airways", description: "Enjoy Special Fares on Flights to All ITA Airways Networks", validTill: "31st Dec 2024", imageUrl: "/api/placeholder/300/200" },
+    { title: "Last Minute Booking", description: "Flat 25% OFF with Last Minute Booking", validTill: "25th Aug 2024", imageUrl: "../../assets/imgs/hero6.jpg" },
+    { title: "Akasa Air", description: "Book Akasa Air One-Way Domestic Flights at a Starting Fare of INR 1,515*", validTill: "18th Aug 2024", imageUrl: "../../assets/imgs/hero5.jpg" },
+    { title: "ITA Airways", description: "Enjoy Special Fares on Flights to All ITA Airways Networks", validTill: "31st Dec 2024", imageUrl: "../../assets/imgs/aero.png" },
   ];
 
   return (
@@ -74,4 +73,4 @@ const HomePage = () => {
   );
 };
 
-export default homePage;
+export default Offers;
