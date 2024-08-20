@@ -1,148 +1,147 @@
 import React from "react";
+import { Button, Input, Textarea, Typography } from "@material-tailwind/react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Navbar from "../navbar/Navbar.jsx";
-
-import { Search, Plane, CreditCard, Package, Cookie } from "lucide-react";
 import Footer from "../footer/Footer.jsx";
 
 const HelpCenter = () => {
+  const position = [51.505, -0.09]; // Example coordinates (latitude, longitude)
   return (
     <>
       <Navbar />
-      <div className="max-w-4xl mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-8 text-center">
-          Welcome to Help Centre
-        </h1>
-        <form>
-          <div className="space-y-12">
-            <div className="border-b border-gray-900/10 pb-12">
-              <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                <div className="sm:col-span-4">
-                  <label
-                    htmlFor="username"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+      <section className="px-8 py-8 lg:py-16 ">
+        <div className="container mx-auto text-center">
+          <Typography
+            variant="h5"
+            color="blue-gray"
+            className="mb-4 !text-base lg:!text-2xl"
+          >
+            Customer Care
+          </Typography>
+          <Typography
+            variant="h1"
+            color="blue-gray"
+            className="mb-4 !text-3xl lg:!text-5xl"
+          >
+            We&apos;re Here to Help
+          </Typography>
+          <Typography className="mb-10 font-normal !text-lg lg:mb-20 mx-auto max-w-3xl !text-gray-500">
+            Whether it&apos;s a question about our services, a request for
+            technical assistance, or suggestions for improvement, our team is
+            eager to hear from you.
+          </Typography>
+          <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-center">
+            <MapContainer
+              center={position}
+              zoom={13}
+              style={{ height: "400px", width: "100%" }}
+            >
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              />
+              <Marker position={position}>
+                <Popup>
+                  It's a <br /> Dummy Map.
+                </Popup>
+              </Marker>
+            </MapContainer>
+            <form action="#" className="flex flex-col gap-4 lg:max-w-sm">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Typography
+                    variant="small"
+                    className="mb-2 text-left font-medium !text-gray-900"
                   >
-                    Email
-                  </label>
-                  <div className="mt-2">
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                      <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">
-                        user@gmail.com/
-                      </span>
-                      <input
-                        id="email"
-                        name="email"
-                        type="text"
-                        placeholder="Email"
-                        autoComplete="email"
-                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
+                    First Name
+                  </Typography>
+                  <Input
+                    color="gray"
+                    size="lg"
+                    placeholder="First Name"
+                    name="first-name"
+                    className="focus:border-t-gray-900"
+                    containerProps={{
+                      className: "min-w-full",
+                    }}
+                    labelProps={{
+                      className: "hidden",
+                    }}
+                  />
                 </div>
-
-                <div className="col-span-full">
-                  <label
-                    htmlFor="about"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                <div>
+                  <Typography
+                    variant="small"
+                    className="mb-2 text-left font-medium !text-gray-900"
                   >
-                    About
-                  </label>
-                  <div className="mt-2">
-                    <textarea
-                      id="about"
-                      name="about"
-                      placeholder="Write your Query"
-                      rows={3}
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      defaultValue={""}
-                    />
-                  </div>
+                    Last Name
+                  </Typography>
+                  <Input
+                    color="gray"
+                    size="lg"
+                    placeholder="Last Name"
+                    name="last-name"
+                    className="focus:border-t-gray-900"
+                    containerProps={{
+                      className: "!min-w-full",
+                    }}
+                    labelProps={{
+                      className: "hidden",
+                    }}
+                  />
                 </div>
               </div>
-            </div>
-          </div>
-        </form>
-
-        <h2 className="text-2xl font-semibold my-4">Explore help articles</h2>
-
-        <div className="mb-6">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search help articles"
-              className="w-full p-3 pr-10 border rounded-lg"
-            />
-            <Search className="absolute right-3 top-3 text-gray-400" />
+              <div>
+                <Typography
+                  variant="small"
+                  className="mb-2 text-left font-medium !text-gray-900"
+                >
+                  Your Email
+                </Typography>
+                <Input
+                  color="gray"
+                  size="lg"
+                  placeholder="name@email.com"
+                  name="email"
+                  className="focus:border-t-gray-900"
+                  containerProps={{
+                    className: "!min-w-full",
+                  }}
+                  labelProps={{
+                    className: "hidden",
+                  }}
+                />
+              </div>
+              <div>
+                <Typography
+                  variant="small"
+                  className="mb-2 text-left font-medium !text-gray-900"
+                >
+                  Your Message
+                </Typography>
+                <Textarea
+                  rows={6}
+                  color="gray"
+                  placeholder="Message"
+                  name="message"
+                  className="focus:border-t-gray-900"
+                  containerProps={{
+                    className: "!min-w-full",
+                  }}
+                  labelProps={{
+                    className: "hidden",
+                  }}
+                />
+              </div>
+              <Button className="w-full" color="gray">
+                Send message
+              </Button>
+            </form>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <HelpSection
-            title="Flight"
-            icon={<Plane />}
-            links={[
-              { text: "Book a flight using an airline credit", href: "#" },
-              { text: "Airline-initiated schedule change", href: "#" },
-              { text: "Cancel your flight", href: "#" },
-            ]}
-          />
-          <HelpSection
-            title="Refunds & Charges"
-            icon={<CreditCard />}
-            links={[
-              { text: "Refund timelines, policies & processes", href: "#" },
-              { text: "Get a receipt for your booking", href: "#" },
-              { text: "Payment security and options", href: "#" },
-            ]}
-          />
-          <HelpSection
-            title="Terms and condition"
-            icon={<Package />}
-            links={[
-              { text: "Change your vacation package", href: "#" },
-              { text: "Airline telephone numbers", href: "#" },
-              { text: "Cancel your vacation package", href: "#" },
-            ]}
-          />
-          <HelpSection
-            title="Privacy And policy"
-            icon={<Cookie />}
-            links={[
-              { text: "Update your account Information", href: "#" },
-              { text: "Information About your Privacy", href: "#" },
-              {
-                text: "What privacy and data subject are available",
-                href: "#",
-              },
-            ]}
-          />
-        </div>
-      </div>
+      </section>
       <Footer />
     </>
-  );
-};
-
-const HelpSection = ({ title, icon, links }) => {
-  return (
-    <div className="border rounded-lg p-4">
-      <div className="flex items-center mb-4">
-        {icon}
-        <h3 className="text-xl font-semibold ml-2">{title}</h3>
-      </div>
-      <ul className="space-y-2">
-        {links.map((link, index) => (
-          <li key={index}>
-            <a href={link.href} className="text-blue-500 hover:underline">
-              {link.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <a href="#" className="block mt-4 text-blue-500 hover:underline">
-        More &gt;
-      </a>
-    </div>
   );
 };
 

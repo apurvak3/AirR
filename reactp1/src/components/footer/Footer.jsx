@@ -11,7 +11,9 @@ const Footer = () => {
   return (
     <div className="mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300 bg-gray-800">
       <div>
-        <h1 className="w-full text-3xl font-bold text-[#00df9a]">AirRESERVAR</h1>
+        <h1 className="w-full text-3xl font-bold text-[#00df9a]">
+          AirRESERVAR
+        </h1>
         <p className="py-4">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit
           ullam iste repellat consequatur libero reiciendis, blanditiis
@@ -25,14 +27,14 @@ const Footer = () => {
           <FaDribbbleSquare size={30} />
         </div>
       </div>
-      <div className="lg:col-span-2 flex justify-between mt-6">
+      <div className="lg:col-span-2 flex justify-evenly mt-6">
         <div>
-          <h6 className="font-medium text-gray-400 text-center">Solutions</h6>
+          <h6 className="font-medium text-gray-400 text-center">Legal</h6>
           <ul>
-            <li className="py-2 text-sm">Analytics</li>
-            <li className="py-2 text-sm">Marketing</li>
-            <li className="py-2 text-sm">Commerce</li>
-            <li className="py-2 text-sm">Insights</li>
+            <li className="py-2 text-sm">Privacy</li>
+            <li className="py-2 text-sm">Policy</li>
+            <li className="py-2 text-sm">Terms</li>
+            <li className="py-2 text-sm">Conditions</li>
           </ul>
         </div>
         <div>
@@ -50,16 +52,6 @@ const Footer = () => {
             <li className="py-2 text-sm">About</li>
             <li className="py-2 text-sm">Blog</li>
             <li className="py-2 text-sm">Jobs</li>
-            <li className="py-2 text-sm">Press</li>
-            <li className="py-2 text-sm">Careers</li>
-          </ul>
-        </div>
-        <div>
-          <h6 className="font-medium text-gray-400 text-center">Legal</h6>
-          <ul>
-            <li className="py-2 text-sm">Claim</li>
-            <li className="py-2 text-sm">Policy</li>
-            <li className="py-2 text-sm">Terms</li>
           </ul>
         </div>
       </div>
