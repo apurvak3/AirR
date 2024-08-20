@@ -11,6 +11,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
 import flag from "../../assets/imgs/Flag_of_Spain.svg";
+import { useState, useEffect } from "react";
 
 const navigation = [
   { name: "Home", to: `/`, current: true },
@@ -23,6 +24,17 @@ function classNames(...classes) {
 }
 
 function Navbar() {
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    const fetchCountryData = async () => {
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      const data = await response.json();
+      setCountries(data);
+    };
+    fetchCountryData();
+  }, []);
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -70,18 +82,28 @@ function Navbar() {
               </div>
             </div>
           </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
-              <div>
-                <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">Open user menu</span>
-                  <img alt="" src={flag} className="h-8 w-8 rounded-full" />
-                </MenuButton>
-              </div>
-            </Menu>
-          </div>
+          {/* Country Flags */}
+          {countries.map((country) => {
+            if (country.name.common === "India") {
+              return (
+                <div  key={country.cca3} className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                  <Menu as="div" className="relative ml-3">
+                    <div>
+                      <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span className="absolute -inset-1.5" />
+                        <span className="sr-only">Open user menu</span>
+                        <img
+                          alt=""
+                          src={country.flags.png}
+                          className="h-8 w-8 rounded-full"
+                        />
+                      </MenuButton>
+                    </div>
+                  </Menu>
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
 

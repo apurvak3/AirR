@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer"
 
 const Card = ({ children, className }) => (
   <div className={`bg-white rounded-lg shadow-md overflow-hidden ${className}`}>
@@ -79,6 +80,7 @@ const TravelBlog = () => {
           ))}
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -1,152 +1,70 @@
 import React from "react";
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import {
+  FaDribbbleSquare,
+  FaFacebookSquare,
+  FaGithubSquare,
+  FaInstagram,
+  FaTwitterSquare,
+} from "react-icons/fa";
 
-function Footer() {
+const Footer = () => {
   return (
-    <>
-      {/* Footer */}
-      <footer className="text-center text-lg-start bg-gray-800 text-muted">
-        {/* Section: Social media */}
-        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-          {/* Left */}
-          <div className="me-5 d-none d-lg-block text-white">
-            <span>Get connected with us on social networks:</span>
-          </div>
-          {/* Left */}
-          {/* Right */}
-          <div>
-            <a href className="me-4 text-reset">
-              <i className="fab fa-facebook-f text-white" />
-            </a>
-            <a href className="me-4 text-reset">
-              <i className="fab fa-twitter text-white" />
-            </a>
-            <a href className="me-4 text-reset">
-              <i className="fab fa-google text-white"/>
-            </a>
-            <a href className="me-4 text-reset">
-              <i className="fab fa-instagram text-white" />
-            </a>
-            <a href className="me-4 text-reset">
-              <i className="fab fa-linkedin text-white" />
-            </a>
-            <a href className="me-4 text-reset">
-              <i className="fab fa-github text-white" />
-            </a>
-          </div>
-          {/* Right */}
-        </section>
-        {/* Section: Social media */}
-        {/* Section: Links  */}
-        <section className>
-          <div className="container text-center text-md-start mt-5">
-            {/* Grid row */}
-            <div className="row mt-3 text-white">
-              {/* Grid column */}
-              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-white">
-                {/* Content */}
-                <h6 className="text-uppercase fw-bold mb-4 text-white">
-                  <i className="fas fa-gem me-3 text-white" />
-                  Company name
-                </h6>
-                <p>
-                  Here you can use rows and columns to organize your footer
-                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit.
-                </p>
-              </div>
-              {/* Grid column */}
-              {/* Grid column */}
-              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                {/* Links */}
-                <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Angular
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    React
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Vue
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Laravel
-                  </a>
-                </p>
-              </div>
-              {/* Grid column */}
-              {/* Grid column */}
-              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                {/* Links */}
-                <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Pricing
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Settings
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Orders
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Help
-                  </a>
-                </p>
-              </div>
-              {/* Grid column */}
-              {/* Grid column */}
-              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                {/* Links */}
-                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                <p>
-                  <i className="fas fa-home me-3" /> New York, NY 10012, US
-                </p>
-                <p>
-                  <i className="fas fa-envelope me-3" />
-                  info@example.com
-                </p>
-                <p>
-                  <i className="fas fa-phone me-3" /> + 01 234 567 88
-                </p>
-                <p>
-                  <i className="fas fa-print me-3" /> + 01 234 567 89
-                </p>
-              </div>
-              {/* Grid column */}
-            </div>
-            {/* Grid row */}
-          </div>
-        </section>
-        {/* Section: Links  */}
-        {/* Copyright */}
-        <div
-          className="text-center p-4 text-white"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-        >
-          © 2021 Copyright:
-          <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-            MDBootstrap.com
-          </a>
+    <div className="mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300 bg-gray-800">
+      <div>
+        <h1 className="w-full text-3xl font-bold text-[#00df9a]">AirRESERVAR</h1>
+        <p className="py-4">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit
+          ullam iste repellat consequatur libero reiciendis, blanditiis
+          accusantium.
+        </p>
+        <div className="flex justify-between md:w-[75%] my-6">
+          <FaFacebookSquare size={30} />
+          <FaInstagram size={30} />
+          <FaTwitterSquare size={30} />
+          <FaGithubSquare size={30} />
+          <FaDribbbleSquare size={30} />
         </div>
-        {/* Copyright */}
-      </footer>
-      {/* Footer */}
-    </>
+      </div>
+      <div className="lg:col-span-2 flex justify-between mt-6">
+        <div>
+          <h6 className="font-medium text-gray-400 text-center">Solutions</h6>
+          <ul>
+            <li className="py-2 text-sm">Analytics</li>
+            <li className="py-2 text-sm">Marketing</li>
+            <li className="py-2 text-sm">Commerce</li>
+            <li className="py-2 text-sm">Insights</li>
+          </ul>
+        </div>
+        <div>
+          <h6 className="font-medium text-gray-400 text-center">Support</h6>
+          <ul>
+            <li className="py-2 text-sm">Pricing</li>
+            <li className="py-2 text-sm">Documentation</li>
+            <li className="py-2 text-sm">Guides</li>
+            <li className="py-2 text-sm">API Status</li>
+          </ul>
+        </div>
+        <div>
+          <h6 className="font-medium text-gray-400 text-center">Company</h6>
+          <ul>
+            <li className="py-2 text-sm">About</li>
+            <li className="py-2 text-sm">Blog</li>
+            <li className="py-2 text-sm">Jobs</li>
+            <li className="py-2 text-sm">Press</li>
+            <li className="py-2 text-sm">Careers</li>
+          </ul>
+        </div>
+        <div>
+          <h6 className="font-medium text-gray-400 text-center">Legal</h6>
+          <ul>
+            <li className="py-2 text-sm">Claim</li>
+            <li className="py-2 text-sm">Policy</li>
+            <li className="py-2 text-sm">Terms</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Footer;

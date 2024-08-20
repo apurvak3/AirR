@@ -2,11 +2,12 @@ import React from "react";
 import Navbar from "../navbar/Navbar.jsx";
 
 import { Search, Plane, CreditCard, Package, Cookie } from "lucide-react";
+import Footer from "../footer/Footer.jsx";
 
 const HelpCenter = () => {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className="max-w-4xl mx-auto p-6">
         <h1 className="text-3xl font-bold mb-8 text-center">
           Welcome to Help Centre
@@ -117,6 +118,7 @@ const HelpCenter = () => {
           />
         </div>
       </div>
+      <Footer />
     </>
   );
 };
