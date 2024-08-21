@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import {
   Disclosure,
   DisclosureButton,
@@ -22,12 +23,40 @@ function classNames(...classes) {
 }
 
 function Navbar() {
+  const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState({
+    code: "US", // Default country
+    name: "United States",
+  });
+
+  useEffect(() => {
+    const fetchCountryData = async () => {
+      try {
+        const response = await fetch("https://flagcdn.com/en/codes.json");
+        const data = await response.json();
+        const countryArray = Object.keys(data).map((code) => ({
+          code: code.toUpperCase(),
+          name: data[code],
+        }));
+        setCountries(countryArray);
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
+    fetchCountryData();
+  }, []);
+
+  // Function to handle the country selection
+  const handleCountrySelect = (country) => {
+    setSelectedCountry(country);
+  };
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
+            {/* Mobile menu button */}
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
@@ -69,20 +98,42 @@ function Navbar() {
               </div>
             </div>
           </div>
-          {/* Country Flags */}
 
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          {/* Country Dropdown */}
+          <div className="relative inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <Menu as="div" className="relative ml-3">
               <div>
                 <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                   <span className="absolute -inset-1.5" />
                   <img
-                    alt=""
-                    src="https://flagsapi.com/ES/shiny/64.png"
+                    alt={selectedCountry.name}
+                    src={`https://flagsapi.com/${selectedCountry.code}/shiny/64.png`}
                     className="h-8 w-8 rounded-full"
                   />
                 </MenuButton>
               </div>
+              <MenuItems className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none h-64 overflow-auto">
+                {countries.map((country) => (
+                  <MenuItem key={country.code}>
+                    {({ active }) => (
+                      <button
+                        className={classNames(
+                          active ? "bg-gray-100" : "",
+                          "flex items-center w-full px-4 py-2 text-sm text-gray-700"
+                        )}
+                        onClick={() => handleCountrySelect(country)}
+                      >
+                        <img
+                          alt={`${country.name} Flag`}
+                          src={`https://flagsapi.com/${country.code}/shiny/64.png`}
+                          className="h-5 w-5 mr-2 rounded-full"
+                        />
+                        {country.name}
+                      </button>
+                    )}
+                  </MenuItem>
+                ))}
+              </MenuItems>
             </Menu>
           </div>
         </div>
@@ -111,4 +162,5 @@ function Navbar() {
     </Disclosure>
   );
 }
+
 export default Navbar;
