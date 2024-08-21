@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "../navbar/Navbar";
-import hero1 from "../../assets/imgs/aero.png";
-import hero2 from "../../assets/imgs/hero4.jpg";
-import hero3 from "../../assets/imgs/hero5.jpg";
+import hero1 from "../../assets/imgs/slide1.png";
+import hero2 from "../../assets/imgs/slide2.jpg";
+import hero3 from "../../assets/imgs/slide3.jpg";
 import Footer from "../footer/Footer";
 import Offers from "./Offers";
 

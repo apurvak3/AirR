@@ -1,9 +1,9 @@
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const OfferCard = ({ title, description, validTill, imageUrl }) => (
+const OfferCard = ({ title, description, validTill, imgUrl }) => (
   <div className="bg-white rounded-lg shadow-md p-4 flex flex-col">
-    <img src={imageUrl} alt={title} className="w-full h-32 object-cover rounded-t-lg" />
+    <img src={imgUrl} alt={title} className="w-full h-32 object-cover rounded-t-lg" />
     <h3 className="text-lg font-bold mt-2">{title}</h3>
     <p className="text-sm mt-1">{description}</p>
     <p className="text-xs text-gray-500 mt-auto">Valid till: {validTill}</p>
@@ -26,9 +26,9 @@ const FlightDeal = ({ destination, date, airline, price }) => (
 
 const Offers = () => {
   const offers = [
-    { title: "Last Minute Booking", description: "Flat 25% OFF with Last Minute Booking", validTill: "25th Aug 2024", imageUrl: "../../assets/imgs/hero6.jpg" },
-    { title: "Akasa Air", description: "Book Akasa Air One-Way Domestic Flights at a Starting Fare of INR 1,515*", validTill: "18th Aug 2024", imageUrl: "../../assets/imgs/hero5.jpg" },
-    { title: "ITA Airways", description: "Enjoy Special Fares on Flights to All ITA Airways Networks", validTill: "31st Dec 2024", imageUrl: "../../assets/imgs/aero.png" },
+    { title: "Last Minute Booking", description: "Flat 25% OFF with Last Minute Booking", validTill: "25th Aug 2024", imgUrl:"../../assets/imgs/offer1.jpg" },
+    { title: "Akasa Air", description: "Book Akasa Air One-Way Domestic Flights at a Starting Fare of INR 1,515*", validTill: "18th Aug 2024", imgUrl:"../../assets/imgs/offer2.jpg" },
+    { title: "ITA Airways", description: "Enjoy Special Fares on Flights to All ITA Airways Networks", validTill: "31st Dec 2024", imgUrl:"../../assets/imgs/offer3.jpg" },
   ];
 
   return (
@@ -56,6 +56,8 @@ const Offers = () => {
       <div className="mb-4">
         <select className="border p-2 rounded">
           <option>Delhi (DEL)</option>
+          <option>Mumbai (MUB)</option>
+          <option>Agra(AGR)</option>
         </select>
         
         <div className="mt-2">

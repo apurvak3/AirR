@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <Support />,
   },
   {
-    path:"/terms and condition",
+    path:"/termsandcondition",
     element : <TermsAndConditions/>,
   }
 ]);
