@@ -5,6 +5,7 @@ import hero2 from "../../assets/imgs/slide2.jpg";
 import hero3 from "../../assets/imgs/slide3.jpg";
 import Footer from "../footer/Footer";
 import Offers from "./Offers";
+import Partners from "../partners/Partners";
 
 function Home() {
   return (
@@ -42,21 +43,24 @@ function Home() {
             <div className="carousel-item active">
               <img
                 src={hero1}
-                class="d-block w-100 object-fit-cover slider-img"
+                class="d-block w-100 object-fit-cover"
+                style={{ height: "80vh" }}
                 alt="heroImg"
               />
             </div>
             <div className="carousel-item">
               <img
                 src={hero2}
-                class="d-block w-100 object-fit-cover slider-img"
+                class="d-block w-100 object-fit-cover"
+                style={{ height: "80vh" }}
                 alt="heroImg"
               />
             </div>
             <div className="carousel-item">
               <img
                 src={hero3}
-                class="d-block w-100 object-fit-cover slider-img"
+                class="d-block w-100 object-fit-cover"
+                style={{ height: "80vh" }}
                 alt="heroImg"
               />
             </div>
@@ -82,6 +86,7 @@ function Home() {
         </div>
       </div>
       <Offers />
+      <Partners />
       <Footer />
     </>
   );
