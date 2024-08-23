@@ -3,8 +3,14 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const OfferCard = ({ title, description, validTill, imgUrl }) => (
   <div className="bg-white rounded-lg shadow-md p-4 flex flex-col">
-    <img src={imgUrl} alt={title} className="w-full h-32 object-cover rounded-t-lg" />
-    <h3 className="text-lg font-bold mt-2">{title}</h3>
+    <div className="relative w-full pb-[100%] mb-4">
+      <img 
+        src={imgUrl} 
+        alt={title} 
+        className="absolute inset-0 w-full h-full object-cover rounded-lg"
+      />
+    </div>
+    <h3 className="text-lg font-bold">{title}</h3>
     <p className="text-sm mt-1">{description}</p>
     <p className="text-xs text-gray-500 mt-auto">Valid till: {validTill}</p>
   </div>
@@ -26,9 +32,9 @@ const FlightDeal = ({ destination, date, airline, price }) => (
 
 const Offers = () => {
   const offers = [
-    { title: "Last Minute Booking", description: "Flat 25% OFF with Last Minute Booking", validTill: "25th Aug 2024", imgUrl:"../../assets/imgs/offer1.jpg" },
-    { title: "Akasa Air", description: "Book Akasa Air One-Way Domestic Flights at a Starting Fare of INR 1,515*", validTill: "18th Aug 2024", imgUrl:"../../assets/imgs/offer2.jpg" },
-    { title: "ITA Airways", description: "Enjoy Special Fares on Flights to All ITA Airways Networks", validTill: "31st Dec 2024", imgUrl:"../../assets/imgs/offer3.jpg" },
+    { title: "Last Minute Booking", description: "Flat 25% OFF with Last Minute Booking", validTill: "25th Aug 2024", imgUrl:"/public/offer1.jpg" },
+    { title: "First Flight", description: "Register and Get Discount on Booking First Flight with us*", validTill: "18th Aug 2024", imgUrl:"/public/offer2.jpg" },
+    { title: "ITA Airways", description: "Enjoy Special Fares on Flights to All ITA Airways Networks", validTill: "31st Dec 2024", imgUrl:"/public/offer3.jpg" },
   ];
 
   return (
