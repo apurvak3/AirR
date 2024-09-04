@@ -5,10 +5,17 @@ import "./index.css";
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Blog from "./components/blog/Blog.jsx";
 import Support from "./components/support/Support.jsx";
 import TermsAndConditions from "./components/TermsAndCondition/TermsAndCondition.jsx";
+import AllBlogs from "./components/blog/AllBlogs.jsx";
+import CurrentBlog from "./components/blog/CurrentBlog.jsx";
+
+
+AOS.init();
+
 
 const router = createBrowserRouter([
   {
@@ -21,7 +28,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/blogs",
-    element: <Blog />,
+    element: <AllBlogs />,
+  },
+  {
+    path: "/currentBlog",
+    element: <CurrentBlog />,
   },
   {
     path: "/support",

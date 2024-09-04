@@ -6,6 +6,8 @@ import hero3 from "../../assets/imgs/slide3.jpg";
 import Footer from "../footer/Footer";
 import Offers from "./Offers";
 import Partners from "../partners/Partners";
+import AllBlogs from "../blog/AllBlogs";
+import HomeBlogs from "../blog/HomeBlogs";
 
 function Home() {
   return (
@@ -40,7 +42,12 @@ function Home() {
             />
           </div>
           <div className="carousel-inner h-75">
-            <div className="carousel-item active">
+            <div
+              className="carousel-item active"
+              data-aos="zoom-out"
+              data-aos-easing="linear"
+              data-aos-duration="2000"
+            >
               <img
                 src={hero1}
                 class="d-block w-100 object-fit-cover"
@@ -85,6 +92,7 @@ function Home() {
           </button>
         </div>
       </div>
+      <HomeBlogs />
       <Offers />
       <Partners />
       <Footer />

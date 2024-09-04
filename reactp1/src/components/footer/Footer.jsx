@@ -6,18 +6,14 @@ import {
   FaInstagram,
   FaTwitterSquare,
 } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300 bg-gray-800">
+    <div className="mx-auto pt-8 px-4 grid lg:grid-cols-3 gap-8 text-gray-300 bg-gray-800">
       <div>
-        <h1 className="w-full text-3xl font-bold text-[#00df9a]">
-          AirRESERVAR
-        </h1>
         <p className="py-4">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit
-          ullam iste repellat consequatur libero reiciendis, blanditiis
-          accusantium.
+         Welcome to AIRRESERVAR a reliable flight booking website, Book your flight for your destination.
         </p>
         <div className="flex justify-between md:w-[75%] my-6">
           <FaFacebookSquare size={30} />
@@ -29,16 +25,14 @@ const Footer = () => {
       </div>
       <div className="lg:col-span-2 flex justify-evenly mt-6">
         <div>
-          <h6 className="font-medium text-gray-400 text-center">Legal</h6>
+          <h6 className="font-medium text-gray-300 text-center">Legal</h6>
           <ul>
-            <li className="py-2 text-sm">Privacy</li>
-            <li className="py-2 text-sm">Policy</li>
-            <li className="py-2 text-sm">Terms</li>
-            <li className="py-2 text-sm">Conditions</li>
+            <li className="py-2 text-sm"><NavLink to={`/termsandcondition`} className="text-gray-300 hover:text-white">Privacy & Policy</NavLink></li>
+            <li className="py-2 text-sm"><NavLink to={`/termsandcondition`} className="text-gray-300 hover:text-white">Terms & Conditions</NavLink></li>
           </ul>
         </div>
         <div>
-          <h6 className="font-medium text-gray-400 text-center">Support</h6>
+          <h6 className="font-medium text-gray-300 text-center">Support</h6>
           <ul>
             <li className="py-2 text-sm">Pricing</li>
             <li className="py-2 text-sm">Documentation</li>
@@ -47,10 +41,10 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h6 className="font-medium text-gray-400 text-center">Company</h6>
+          <h6 className="font-medium text-gray-300 text-center">Company</h6>
           <ul>
             <li className="py-2 text-sm">About</li>
-            <li className="py-2 text-sm">Blog</li>
+            <li className="py-2 text-sm"><NavLink to={`/blogs`} className="text-gray-300 hover:text-white">Blogs</NavLink></li>
             <li className="py-2 text-sm">Jobs</li>
           </ul>
         </div>
