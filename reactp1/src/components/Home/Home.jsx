@@ -6,7 +6,6 @@ import hero3 from "../../assets/imgs/slide3.jpg";
 import Footer from "../footer/Footer";
 import Offers from "./Offers";
 import Partners from "../partners/Partners";
-import AllBlogs from "../blog/AllBlogs";
 import HomeBlogs from "../blog/HomeBlogs";
 
 function Home() {
